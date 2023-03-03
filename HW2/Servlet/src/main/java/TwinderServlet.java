@@ -22,7 +22,7 @@ public class TwinderServlet extends HttpServlet {
   private static final String QUEUE_NAME = "TWINDER_DATA";
   private static final String EXCHANGE_NAME = "EXCHANGE";
 
-  private static final int SIZE = 1000;
+  private static final int SIZE = 2000;
   private RabbitMQChannelPool rabbitMQChannelPool;
 
   public void init() {
@@ -32,7 +32,7 @@ public class TwinderServlet extends HttpServlet {
 //      factory.setHost("localhost");
 //      factory.setUsername("guest");
 //      factory.setPassword("guest");
-      factory.setHost("54.184.113.242");
+      factory.setHost("34.213.78.144");
       factory.setUsername("test");
       factory.setPassword("test");
 //      factory.setVirtualHost("EXCHANGE");
@@ -123,7 +123,7 @@ public class TwinderServlet extends HttpServlet {
       Channel channel = rabbitMQChannelPool.borrowObject(); // get a channel from the pool
       channel.queueDeclare(QUEUE_NAME, false, false, false, null); // publish message
       channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
-      channel.basicPublish(EXCHANGE_NAME, "", null,
+      channel.basicPublish(EXCHANGE_NAME, QUEUE_NAME, null,
           message.toString().getBytes(StandardCharsets.UTF_8)); // To publish a message
       System.out.println(" [x] Sent '" + message.toString() + "'");
       rabbitMQChannelPool.returnObject(channel); // return channel to the pool

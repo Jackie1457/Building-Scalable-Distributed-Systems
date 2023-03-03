@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
 public class Consume {
-  private final static Integer NUM_OF_THREADS = 20;
+  private final static Integer NUM_OF_THREADS = 100;
 
   public static void main(String[] args) throws IOException, TimeoutException {
 
     ConnectionFactory factory = new ConnectionFactory();
     factory.setPort(5672);
-    factory.setHost("54.184.113.242");
+    factory.setHost("34.213.78.144");
     factory.setUsername("test");
     factory.setPassword("test");
 //    factory.setHost("localhost");

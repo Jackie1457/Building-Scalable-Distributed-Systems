@@ -30,17 +30,16 @@ public class RabbitMQChannel implements Runnable{
       try {
         Channel channel = connection.createChannel();
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
-        String queueName = channel.queueDeclare().getQueue();
-//        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-        channel.queueBind(queueName, EXCHANGE_NAME, "fanout");
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "fanout");
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         channel.basicQos(1); // Per consumer limit, receive a maximum of 10 unacknowledged messages at once,accept only 1 unacknowledged message
         Gson gson = new Gson();
         DeliverCallback threadCallback = (consumerTag, delivery) -> {
           String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
 //          System.out.println(" [x] Received '" + message + "'");
-          count ++;
-          System.out.println(" [x] Count '" + count + "'");
+//          count ++;
+//          System.out.println(" [x] Count '" + count + "'");
           JsonObject json = gson.fromJson(message, JsonObject.class);
           if (numOfUsersSwipeRightOn.size() == 0 || !numOfUsersSwipeRightOn.containsKey(
               String.valueOf(json.get("swiper")))) {
@@ -67,7 +66,7 @@ public class RabbitMQChannel implements Runnable{
           channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         };
         boolean autoAck = false;
-        channel.basicConsume(queueName, autoAck, threadCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, autoAck, threadCallback, consumerTag -> { });
       } catch (IOException e) {
         e.printStackTrace();
       }

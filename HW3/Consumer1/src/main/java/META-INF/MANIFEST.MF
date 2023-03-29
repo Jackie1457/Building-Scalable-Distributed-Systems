@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: MyConsumer1.Consume
+Class-Path: slf4j-api-2.0.6.jar gson-2.10.1.jar commons-pool2-2.11.1.jar
+  slf4j-simple-2.0.6.jar amqp-client-5.16.0.jar
+

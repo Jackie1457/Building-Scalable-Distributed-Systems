@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Servlet" />
+        <module name="Consumer1" />
+        <module name="Client" />
+        <module name="Consumer2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Client" target="11" />
+      <module name="ClientPart" target="11" />
+      <module name="Consumer1" target="11" />
+      <module name="Consumer2" target="11" />
+      <module name="Database" target="16" />
+      <module name="Servlet" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Servlet" options="" />
+    </option>
+  </component>
+</project>

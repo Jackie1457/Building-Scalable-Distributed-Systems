@@ -64,3 +64,15 @@ In addition to the course book,  the following are great resources, and can be e
 * Java Concurrency in Practice 1st Edition, Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea
 * Distributed systems : concepts and design, Coulouris, George F. ; Dollimore, Jean. ; Kindberg, Tim. ; Blair, Gordon. Harlow, England ; Addison-Wesley, 2012
 * Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems, Martin Kleppmann, O'Reilly
+
+# Final Project
+## Architecture
+Using the Command Query Responsibility Segregation (CQRS) pattern 
+
+<img width="470" alt="image" src="https://github.com/Janice1457/Building-Scalable-Distributed-Systems/assets/95588190/67482f2c-c9e4-4b56-a9c0-4d96efeacec5">
+
+## JMeter Tests
+<img width="686" alt="image" src="https://github.com/Janice1457/Building-Scalable-Distributed-Systems/assets/95588190/6a3dcbcd-f0ae-4d4f-9643-0eff7c667a71">
+
+## Throughput Result
+<img width="678" alt="image" src="https://github.com/Janice1457/Building-Scalable-Distributed-Systems/assets/95588190/bfe24646-5e29-4dd3-ad74-d57f8356eac2">
